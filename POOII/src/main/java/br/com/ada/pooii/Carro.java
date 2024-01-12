@@ -1,23 +1,40 @@
 package POOII.src.main.java.br.com.ada.pooii;
 
-public class Carro implements Veiculo{
+public class Carro implements VeiculoMotorizado{
+
+    private String nome;
+
+    public Carro(String nome) {
+        this.nome = nome;
+    }
+
     @Override
     public void ligar() {
-        System.out.println("Você ligou o Carro.");
+        System.out.println("Você ligou o Carro " + this.nome);
     }
 
     @Override
     public void desligar() {
-        System.out.println("Você desligou o Carro.");
+        System.out.println("Você desligou o Carro " + this.nome);
     }
 
     @Override
     public void acelerar(int velocidade) {
-        System.out.println("Você acelerou o Carro.");
+        if (velocidade > 0) {
+            if (velocidade < getVelocMaximaPermitida()) {
+                System.out.println("Você está acelerando o Carro " + this.nome + ". Sua velocidade é: " + velocidade);
+            } else {
+                System.out.println("Você está acima da velocidade máxima permitida. Por favor, reduza a velocidade imediatamente.");
+            }
+        }
     }
 
     @Override
     public void frear() {
-        System.out.println("Você freiou o Carro.");
+        System.out.println("Você freiou o Carro " + this.nome);
+    }
+
+    public Integer getVelocMaximaPermitida() {
+        return 230;
     }
 }
