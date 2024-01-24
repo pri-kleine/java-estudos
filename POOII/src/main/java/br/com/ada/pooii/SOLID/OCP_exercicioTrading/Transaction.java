@@ -1,8 +1,7 @@
-package POOII.src.main.java.br.com.ada.pooii.SOLID.exercicioTrading;
+package POOII.src.main.java.br.com.ada.pooii.SOLID.OCP_exercicioTrading;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Locale;
 
 public class Transaction {
 

@@ -1,4 +1,4 @@
-package POOII.src.main.java.br.com.ada.pooii.SOLID.exercicioSRP;
+package POOII.src.main.java.br.com.ada.pooii.SOLID.SRP_exercicio;
 
 import java.util.List;
 

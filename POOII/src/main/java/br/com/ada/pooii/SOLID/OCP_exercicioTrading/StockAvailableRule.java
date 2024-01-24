@@ -1,6 +1,5 @@
-package POOII.src.main.java.br.com.ada.pooii.SOLID.exercicioTrading;
+package POOII.src.main.java.br.com.ada.pooii.SOLID.OCP_exercicioTrading;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
