@@ -17,6 +17,7 @@ public class TaskRepository<T> implements RepositoryInterface<T> {
     }
 
     public TaskRepository() {
+        //duvida - pode ser this.lista = new ArrayList<>(); pode apagar a anterior?
         this(new ArrayList<>());
     }
 

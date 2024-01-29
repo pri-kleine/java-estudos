@@ -11,11 +11,11 @@ public class TaskService<T> {
 
     public TaskService() {
         this.repository = new TaskRepository<>();
-        this.repository.getAll().add((T) new Task("Tarefa exemplo", "Não Iniciada", 0));
+//        this.repository.getAll().add((T) new Task("Tarefa exemplo", "Não Iniciada", 0));
     }
 
     public void salvarNovaTask(T task) {
-        System.out.println("salvando a tarefa com o repository: " + this.repository.getClass().getName());
+        System.out.println("salvando uma tarefa com o repository: " + this.repository.getClass().getName());
         repository.salvar(task);
     }
 
