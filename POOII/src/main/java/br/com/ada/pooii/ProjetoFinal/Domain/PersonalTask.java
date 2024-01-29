@@ -16,4 +16,10 @@ public class PersonalTask extends Task{
         this.tipo = tipo;
     }
 
+    @Override
+    public String toString() {
+        return "PersonalTask{" +
+                "tipo='" + tipo + '\'' +
+                '}';
+    }
 }
