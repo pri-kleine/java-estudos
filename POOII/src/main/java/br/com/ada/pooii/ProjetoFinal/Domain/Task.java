@@ -3,6 +3,8 @@ package POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain;
 import java.util.ArrayList;
 
 public class Task {
+    private static Integer serial = 0;
+    Integer id;
     String nome;
     String status;
     Integer prioridade;
@@ -11,11 +13,9 @@ public class Task {
         this.nome = nome;
         this.status = status;
         this.prioridade = prioridade;
+        this.id = ++serial;
     }
 
-    public Task() {
-        this("default", "new",999);
-    }
     public String getNome() {
         return nome;
     }
@@ -40,10 +40,19 @@ public class Task {
         this.prioridade = prioridade;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
-                "nome='" + nome + '\'' +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
                 ", status='" + status + '\'' +
                 ", prioridade=" + prioridade +
                 '}';

@@ -5,31 +5,42 @@ import POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.Task;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskRepository<T> implements RepositoryInterface<T> {
+public class TaskRepository implements RepositoryInterface<Task> {
 
-    List<T> lista;
-
-    public TaskRepository(List<T> lista) {
-        if (lista != null) this.lista = lista;
-        else this.lista = new ArrayList<>();
-//        Task tarefa1 =new Task("boleto", "pedente",1);
-//        lista.add(tarefa1);
-    }
+    List<Task> lista;
 
     public TaskRepository() {
-        //duvida - pode ser this.lista = new ArrayList<>(); pode apagar a anterior?
-        this(new ArrayList<>());
+        this.lista = (new ArrayList<>());
     }
 
-
-    public void salvar(T task) {
+    public void create(Task task) {
         System.out.println("salvando");
         lista.add(task);
     }
 
-    public List<T> getAll() {
+    @Override
+    public List<Task> read() {
         return this.lista;
     }
 
+    @Override
+    public void update(Integer id, Task task) {
+        for (int i = 0; i < this.lista.size(); i++) {
+            if (this.lista.get(i).getId().equals(id)) {
+                this.lista.set(i, task);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void delete(Integer id) {
+        for (int i = 0; i < this.lista.size(); i++) {
+            if (this.lista.get(i).getId().equals(id)) {
+                this.lista.remove(i);
+                break;
+            }
+        }
+    }
 
 }

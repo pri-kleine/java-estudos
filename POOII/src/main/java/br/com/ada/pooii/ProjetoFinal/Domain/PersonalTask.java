@@ -1,6 +1,6 @@
 package POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain;
 
-public class PersonalTask extends Task{
+public class PersonalTask extends Task {
     String tipo;
 
     public PersonalTask(String nome, String status, Integer prioridade, String tipo) {
@@ -19,7 +19,11 @@ public class PersonalTask extends Task{
     @Override
     public String toString() {
         return "PersonalTask{" +
-                "tipo='" + tipo + '\'' +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", status='" + status + '\'' +
+                ", prioridade=" + prioridade +
+                ", tipo='" + tipo + '\'' +
                 '}';
     }
 }
