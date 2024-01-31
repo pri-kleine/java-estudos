@@ -15,6 +15,15 @@ public class TaskController {
     Scanner scanner = new Scanner(System.in);
 
     public void menu() {
+        String option = "";
+        while (!option.equals("0")) {
+            showMenu();
+            option = getUserOption();
+            executeOption(option);
+        }
+    }
+
+    private void showMenu() {
         String menu = """
                 ______ Menu Principal _____
                 |0 - Sair                 |
@@ -25,33 +34,36 @@ public class TaskController {
                 |5 - Criar uma tarefa     |
                 '''''''''''''''''''''''''''
                 """;
-        String option = "";
-        while (!option.equals("0")) {
-            System.out.println(menu);
-            System.out.print("Escolha uma opção acima: ");
-            option = scanner.nextLine();
-            switch (option) {
-                case "0":
-                    System.out.println("Sair do Menu");
-                    break;
-                case "1":
-                    listTasks();
-                    break;
-                case "2":
-                    listOneTask();
-                    break;
-                case "3":
-                    updateTask();
-                    break;
-                case "4":
-                    deleteTask();
-                    break;
-                case "5":
-                    createTasks();
-                    break;
-                default:
-                    System.out.println("Falha");
-            }
+        System.out.println(menu);
+    }
+
+    private String getUserOption() {
+        System.out.print("Escolha uma opção acima: ");
+        return scanner.nextLine();
+    }
+
+    private void executeOption(String option) {
+        switch (option) {
+            case "0":
+                System.out.println("Sair do Menu");
+                break;
+            case "1":
+                listTasks();
+                break;
+            case "2":
+                listOneTask();
+                break;
+            case "3":
+                updateTask();
+                break;
+            case "4":
+                deleteTask();
+                break;
+            case "5":
+                createTasks();
+                break;
+            default:
+                System.out.println("Falha");
         }
     }
 
@@ -270,41 +282,3 @@ public class TaskController {
         }
     }
 }
-
-
-//    public static void main(String[] args) {
-//
-//
-////        System.out.println("Task type - 1. Standard, 2. Personal, 3. Study, 4. Work");
-////        System.out.println("Please, enter what type of task you want to record: ");
-////        int taskType = scanner.nextInt();
-//
-////        TaskService service;
-////        Task task;
-////
-////        switch (taskType) {
-////            case 1:
-////                task = new Task();
-////                TaskRepository <Task> repository = new TaskRepository<>();
-////                service = new TaskService(repository);
-////                break;
-////            case 2:
-////                PersonalTaskRepository personalTaskRepository = new PersonalTaskRepository();
-////                service = new TaskService(personalTaskRepository);
-////                break;
-////            case 3:
-////                StudyTaskRepository studyTaskRepository = new StudyTaskRepository();
-////                service = new TaskService(studyTaskRepository);
-////                break;
-////            case 4:
-////                WorkTaskRepository workTaskRepository = new WorkTaskRepository();
-////                service = new TaskService(workTaskRepository);
-////                break;
-////            default:
-////                service =  new TaskService(null);
-////                System.out.println("Invalid choice.");
-////                break;
-////        }
-////
-////        service.salvarNovaTask(new Task());
-//    }

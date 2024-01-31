@@ -36,16 +36,12 @@ public class TaskRepository implements RepositoryInterface<BaseTask> {
 
     @Override
     public void delete(Integer id) {
-//        int index = -1;
-        for (int i = 0; i < this.lista.size(); i++) {
+/        for (int i = 0; i < this.lista.size(); i++) {
             if (this.lista.get(i).getId().equals(id)) {
-//                index = i;
                 this.lista.remove(i);
                 System.out.println("Removendo a tarefa...");
                 break;
             }
         }
-//        if (index != -1)
     }
-
 }
