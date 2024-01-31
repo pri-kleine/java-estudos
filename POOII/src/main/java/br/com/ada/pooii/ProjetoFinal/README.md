@@ -1,44 +1,41 @@
-# Projeto FINAL  POOII
-
 # AdaTask
+
 Aplicativo de Gerenciamento de Tarefas via Console
 
 ## Descrição Geral
-AdaTask é um aplicativo de console para gerenciamento de tarefas. Ele permite aos usuários `criar`, `editar`, `deletar` e `visualizar` tarefas pessoais e profissionais. A simulação de um banco de dados será realizada através de listas em memória.
+
+AdaTask é um aplicativo de console para gerenciamento de tarefas implementado em Java. Ele permite a criação, listagem,
+atualização e exclusão de tarefas, com diferentes tipos, como tarefas gerais, pessoais, de estudos e de trabalho.
 
 ## Estrutura do Projeto
+
 * **_Camada de Domain (Domínio)_**:
-    - Contém classes como BaseTask, PersonalTask, WorkTask, StudyTask.
-    - Define a estrutura e as regras de negócios das tarefas.
-    
+    - Contém as classes BaseTask, PersonalTask, WorkTask, StudyTask.
+    - Tipos de Tarefas:
+        - BaseTask: Classe base para todas as tarefas, contendo informações comuns.
+        - PersonalTask, StudyTask, WorkTask: Tipos específicos de tarefas com atributos adicionais.
+
 * **_Camada de Repository (Repositório)_**:
-    - Responsável pela "persistência" dos dados em listas.
-    - Oferece métodos para adicionar, remover, atualizar e buscar tarefas.
+    - TaskRepository: Mantém a persistência das tarefas em uma lista.
+    - RepositoryInterface: Define a interface para operações de criação, leitura, atualização e exclusão.
 
 * **_Camada de Service (Serviço)_**:
-    - Contém a lógica de aplicação, como operações de manipulação de tarefas.
-    - Interage com a camada de Repository para realizar as operações de dados.
+    - TaskService: Gerencia a lógica de negócios e interage com o repositório.
 
 * **_Camada de Controller (Controlador)_**:
+    - TaskController: Controla as interações do usuário e direciona as solicitações para a camada Service para executar.
 
-    - Gerencia a interação do usuário com o sistema via console.
-    - Processa comandos do usuário e utiliza a camada de Service para executar 
-    
 ## Principais funcionalidades
 
-* `Criação de Tarefas`: Adicionar novas tarefas com detalhes como título, descrição, prazo, etc.
+* `Visualização de Tarefas`: Listar todas as tarefas cadastradas.
+* `Consulta de uma Tarefa`: Visualize os detalhes de uma tarefa específica.
 * `Edição de Tarefas`: Atualizar detalhes de tarefas existentes.
 * `Remoção de Tarefas`: Deletar tarefas existentes.
-* `Visualização de Tarefas`: Listar todas as tarefas ou filtrar por critérios específicos.
-
-## Implementação Técnica
-
-* `Console Interface`: Uma interface simples de linha de comando para interação com o usuário.
-* `Classes de Entidade`: BaseTask e suas subclasses para representar diferentes tipos de tarefas.
-* `Classe Repository`: Utiliza uma lista para simular o armazenamento de dados.
-* `Classe Service`: Implementa a lógica de negócios.
-* `Classe Controller`: Processa a entrada do usuário e comanda as operações correspondentes.
+* `Criação de Tarefas`: Adicione novas tarefas com diferentes categorias.
 
 ## Considerações Adicionais
-* O projeto deve seguir os princípios SOLID para um design limpo e extensível.
-* A aplicação de herança e generics deve ser demonstrada nas estruturas de dados e nas operações de manipulação de tarefas.
+
+* O projeto foi elaborado com objetivo de seguir os princípios SOLID para um design limpo e extensível.
+* Conceitos de herança e generics foram aplicados nas estruturas de dados e nas operações de manipulação de
+  tarefas.
+* O projeto foi solicitado como avaliação final do Módulo de POOII do curso de Java da ADA/B3 - Devas
