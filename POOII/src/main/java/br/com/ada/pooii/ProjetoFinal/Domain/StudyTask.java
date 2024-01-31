@@ -8,10 +8,6 @@ public class StudyTask extends BaseTask {
         this.assunto = assunto;
     }
 
-    public String getAssunto() {
-        return assunto;
-    }
-
     public void setAssunto(String assunto) {
         this.assunto = assunto;
     }

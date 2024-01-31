@@ -67,7 +67,6 @@ public class TaskController {
         System.out.println(subMenu);
         System.out.print("Digite o número do tipo de tarefa escolhida: ");
         String option = scanner.nextLine();
-        BaseTask task;
         switch (option) {
             case "0":
                 System.out.println("Inclusão de tarefa encerrada pelo usuário.");
@@ -167,17 +166,20 @@ public class TaskController {
         if (task != null) {
             System.out.println("A seguinte task foi encontrada:");
             System.out.println(task);
-            if (task instanceof PersonalTask) {
-                System.out.print("O que você quer atualizar? Digite 1 para nome, 2 para status, 3 para prioridade, 4 para tipo: ");
-            } else if (task instanceof StudyTask) {
-                System.out.print("O que você quer atualizar? Digite 1 para nome, 2 para status, 3 para prioridade, 4 para assunto: ");
-            } else if (task instanceof WorkTask) {
-                System.out.print("O que você quer atualizar? Digite 1 para nome, 2 para status, 3 para prioridade, 4 para projeto: ");
-            } else {
-                System.out.print("O que você quer atualizar? Digite 1 para nome, 2 para status, 3 para prioridade: ");
+            switch (task) {
+                case PersonalTask personalTask1 ->
+                        System.out.print("O que você quer atualizar? Digite 1 para nome, 2 para status, " +
+                                "3 para prioridade, 4 para tipo: ");
+                case StudyTask studyTask ->
+                        System.out.print("O que você quer atualizar? Digite 1 para nome, 2 para status, " +
+                                "3 para prioridade, 4 para assunto: ");
+                case WorkTask workTask ->
+                        System.out.print("O que você quer atualizar? Digite 1 para nome, 2 para status, " +
+                                "3 para prioridade, 4 para projeto: ");
+                default -> System.out.print("O que você quer atualizar? Digite 1 para nome, 2 para status, " +
+                        "3 para prioridade: ");
             }
             int updateOption = Integer.parseInt(scanner.nextLine());
-            label:
             switch (updateOption) {
                 case 1:
                     System.out.print("Digite o novo nome/descrição: ");

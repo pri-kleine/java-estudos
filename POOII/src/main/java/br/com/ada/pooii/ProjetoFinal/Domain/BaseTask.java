@@ -22,16 +22,8 @@ public class BaseTask {
         this.nome = nome;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Integer getPrioridade() {
-        return prioridade;
     }
 
     public void setPrioridade(Integer prioridade) {
