@@ -1,6 +1,6 @@
 package POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain;
 
-public class PersonalTask extends Task {
+public class PersonalTask extends BaseTask {
     String tipo;
 
     public PersonalTask(String nome, String status, Integer prioridade, String tipo) {

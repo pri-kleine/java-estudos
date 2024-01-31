@@ -1,6 +1,6 @@
 package POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain;
 
-public class WorkTask extends Task{
+public class WorkTask extends BaseTask {
     String projeto;
 
     public WorkTask(String nome, String status, Integer prioridade, String projeto) {
@@ -19,7 +19,12 @@ public class WorkTask extends Task{
     @Override
     public String toString() {
         return "WorkTask{" +
-                "projeto='" + projeto + '\'' +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", projeto='" + projeto + '\'' +
+                ", status='" + status + '\'' +
+                ", prioridade=" + prioridade +
                 '}';
     }
 }
+

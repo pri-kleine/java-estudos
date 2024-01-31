@@ -1,15 +1,13 @@
 package POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain;
 
-import java.util.ArrayList;
-
-public class Task {
+public class BaseTask {
     private static Integer serial = 0;
     Integer id;
     String nome;
     String status;
     Integer prioridade;
 
-    public Task(String nome, String status, Integer prioridade) {
+    public BaseTask(String nome, String status, Integer prioridade) {
         this.nome = nome;
         this.status = status;
         this.prioridade = prioridade;

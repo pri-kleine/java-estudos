@@ -1,10 +1,11 @@
 package POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain;
 
-public class StudyTask extends Task{
+public class StudyTask extends BaseTask {
     String assunto;
 
-    public StudyTask(String nome, String status, Integer prioridade) {
+    public StudyTask(String nome, String status, Integer prioridade, String assunto) {
         super(nome, status, prioridade);
+        this.assunto = assunto;
     }
 
     public String getAssunto() {
@@ -18,7 +19,11 @@ public class StudyTask extends Task{
     @Override
     public String toString() {
         return "StudyTask{" +
-                "assunto='" + assunto + '\'' +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", assunto='" + assunto + '\'' +
+                ", status='" + status + '\'' +
+                ", prioridade=" + prioridade +
                 '}';
     }
 }

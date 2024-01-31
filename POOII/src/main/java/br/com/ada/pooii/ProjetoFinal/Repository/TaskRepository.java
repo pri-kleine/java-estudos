@@ -1,33 +1,34 @@
 package POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Repository;
 
-import POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.Task;
+import POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.BaseTask;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaskRepository implements RepositoryInterface<Task> {
+public class TaskRepository implements RepositoryInterface<BaseTask> {
 
-    List<Task> lista;
+    List<BaseTask> lista;
 
     public TaskRepository() {
         this.lista = (new ArrayList<>());
     }
 
-    public void create(Task task) {
-        System.out.println("salvando");
+    public void create(BaseTask task) {
+        System.out.println("Salvando a tarefa...");
         lista.add(task);
     }
 
     @Override
-    public List<Task> read() {
+    public List<BaseTask> read() {
         return this.lista;
     }
 
     @Override
-    public void update(Integer id, Task task) {
+    public void update(Integer id, BaseTask task) {
         for (int i = 0; i < this.lista.size(); i++) {
             if (this.lista.get(i).getId().equals(id)) {
                 this.lista.set(i, task);
+                System.out.println("Atualizando a tarefa...");
                 break;
             }
         }
@@ -35,12 +36,16 @@ public class TaskRepository implements RepositoryInterface<Task> {
 
     @Override
     public void delete(Integer id) {
+//        int index = -1;
         for (int i = 0; i < this.lista.size(); i++) {
             if (this.lista.get(i).getId().equals(id)) {
+//                index = i;
                 this.lista.remove(i);
+                System.out.println("Removendo a tarefa...");
                 break;
             }
         }
+//        if (index != -1)
     }
 
 }

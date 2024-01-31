@@ -1,6 +1,6 @@
 package POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Service;
 
-import POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.Task;
+import POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.BaseTask;
 import POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Repository.TaskRepository;
 
 import java.util.List;
@@ -12,19 +12,19 @@ public class TaskService {
         this.repository = new TaskRepository();
     }
 
-    public void salvarNovaTask(Task task) {
+    public void salvarNovaTask(BaseTask task) {
         repository.create(task);
     }
 
-    public List<Task> listTasks() {
+    public List<BaseTask> listTasks() {
         // Obtenho a lista
         return this.repository.read();
     }
 
-    public Task listOneTask(Integer id) {
+    public BaseTask listOneTask(Integer id) {
         // Obtenho uma tarefa específica
-        List<Task> list = this.repository.read();
-        for (Task task1 : list) {
+        List<BaseTask> list = this.repository.read();
+        for (BaseTask task1 : list) {
             if (task1.getId().equals(id)) {
                 return task1;
             }
@@ -32,16 +32,11 @@ public class TaskService {
         return null;
     }
 
-    public void updateTask(Integer id, Task task) {
+    public void updateTask(Integer id, BaseTask task) {
         this.repository.update(id, task);
     }
 
     public void deleteTask(Integer id) {
-        List<Task> list = this.repository.read();
-        for (Task task3 : list) {
-            if (task3.getId().equals(id)) {
-                this.repository.delete(id);
-            }
-        }
+        this.repository.delete(id);
     }
 }
