@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Service.TaskService</OriginalElement>
+  <nodes>
+    <node x="-870.5" y="1265.5">POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.StudyTask</node>
+    <node x="-262.75" y="1265.5">POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.PersonalTask</node>
+    <node x="10.0" y="995.5">POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Controler.TaskController</node>
+    <node x="-9.0" y="510.5">POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Repository.TaskRepository</node>
+    <node x="-27.0" y="733.5">POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Service.TaskService</node>
+    <node x="-546.5" y="733.5">POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.BaseTask</node>
+    <node x="-372.5" y="510.5">POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Repository.RepositoryInterface</node>
+    <node x="-562.625" y="1265.5">POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.WorkTask</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.StudyTask" target="POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.BaseTask" relationship="GENERALIZATION">
+      <point x="122.5" y="0.0" />
+      <point x="-594.0" y="1334.0" />
+      <point x="-594.0" y="937.0" />
+      <point x="-135.5" y="0.0" />
+    </edge>
+    <edge source="POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Repository.TaskRepository" target="POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Repository.RepositoryInterface" relationship="REALIZATION">
+      <point x="0.0" y="-98.5" />
+      <point x="143.0" y="461.25" />
+      <point x="-226.0" y="461.25" />
+      <point x="0.0" y="83.0" />
+    </edge>
+    <edge source="POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.PersonalTask" target="POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.BaseTask" relationship="GENERALIZATION">
+      <point x="0.0" y="-68.5" />
+      <point x="-154.75" y="1158.0" />
+      <point x="-594.0" y="1158.0" />
+      <point x="-594.0" y="937.0" />
+      <point x="-135.5" y="0.0" />
+    </edge>
+    <edge source="POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.WorkTask" target="POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Domain.BaseTask" relationship="GENERALIZATION">
+      <point x="-118.5" y="0.0" />
+      <point x="-594.0" y="1334.0" />
+      <point x="-594.0" y="937.0" />
+      <point x="-135.5" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.0" showDependencies="false" x="-122.5" y="1090.5" />
+  <SelectedNodes>
+    <node>POOII.src.main.java.br.com.ada.pooii.ProjetoFinal.Repository.RepositoryInterface</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
